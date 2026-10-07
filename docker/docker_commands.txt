@@ -1,0 +1,28 @@
+Docker Build and Run Commands for PDC Matrix Multiplication Project
+
+Build image:
+docker build -f docker/Dockerfile -t pdc-matrix-project .
+
+Run container with GPU:
+docker run --rm -it --gpus all pdc-matrix-project
+
+Inside container, run CPU baseline:
+./cpu_baseline 512
+
+Inside container, run CUDA naive:
+./cuda_naive 512
+
+Inside container, run CUDA tiled:
+./cuda_tiled 512
+
+Inside container, run OpenMP:
+./openmp_parallel 512
+
+Inside container, run MPI with 2 processes:
+mpirun --allow-run-as-root --oversubscribe -np 2 ./mpi_matrix_mul 512
+
+Notes:
+1. Docker build command should be run from inside the pdc_matrix_project folder.
+2. GPU execution requires NVIDIA GPU drivers and NVIDIA Container Toolkit.
+3. If GPU is not available, CPU, OpenMP, and MPI parts can still be tested.
+4. Google Colab was used for development and CUDA testing.

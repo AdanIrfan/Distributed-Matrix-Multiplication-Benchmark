@@ -1,0 +1,15 @@
+implementation,N,time_ms,checksum
+cpu_baseline,256,19.9992,4.27567e+10
+cuda_naive,256,114.512,4.27567e+10
+cuda_tiled,256,36.5632,4.27567e+10
+openmp_parallel,256,13.1632,4.27567e+10
+mpi_2_processes,256,16.8228,4.27567e+10
+cpu_baseline,250,18.745,3.98867e+10
+cuda_naive,250,0.868352,3.98867e+10
+cuda_tiled,250,0.794624,3.98867e+10
+openmp_parallel,250,11.1892,3.98867e+10
+cpu_baseline,512,192.196,3.42226e+11
+cuda_naive,512,1.91901,3.42226e+11
+cuda_tiled,512,1.90054,3.42226e+11
+openmp_parallel,512,194.752,3.42226e+11
+mpi_2_processes,512,201.886,3.42226e+11
